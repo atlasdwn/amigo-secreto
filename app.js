@@ -8,10 +8,23 @@ function adicionarAmigo(){
         nomeAmigos.push(nomeAmigo)
         document.getElementById('listaAmigos').innerHTML = nomeAmigos.join('<br>');
     } else {
-        alert('O campo não pode ficar vazio!')
+        alert('O nome não pode ficar vazio!')
     }
-    
+
     document.querySelector('input').value = ''
 }
+
+function sortearAmigo(){
+    if (nomeAmigos.length == 0) {
+        alert("Por favor, insira um nome.");
+        return;
+
+    } else{
+    let indiceAleatorio = Math.floor(Math.random() * nomeAmigos.length);
+    let nomeSorteado = nomeAmigos[indiceAleatorio];
+
+    document.getElementById("resultado").innerHTML = `Seu amigo secreto é: ${nomeSorteado}`;
+    }
+}  
 
 
